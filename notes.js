@@ -21,6 +21,12 @@ const addNote = (title, body) => {
   }
 }
 
+const listNotes = () => {
+  const notes = loadNotes()
+  console.log(chalk.bold.blue('Your notes: '))
+  notes.forEach((note) => console.log(note.title))
+}
+
 const removeNote = (title) => {
   const notes = loadNotes()
   const clearedNotes = notes.filter((note) => note.title !== title)
@@ -51,4 +57,5 @@ module.exports = {
   getNotes: getNotes,
   addNote: addNote,
   removeNote: removeNote,
+  listNotes: listNotes,
 }
